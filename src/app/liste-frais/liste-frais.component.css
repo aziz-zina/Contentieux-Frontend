@@ -1,0 +1,19 @@
+h3{
+  color: green;
+  font-weight: 700;
+  text-decoration: underline;
+  font-size: x-large;
+}
+
+body{
+  padding: 0 2rem 2rem 2rem;
+}
+
+.button button{
+  margin-left: 24%;
+  padding-right: 15%;
+}
+
+button{
+  text-align: center;
+}

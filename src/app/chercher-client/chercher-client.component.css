@@ -1,0 +1,62 @@
+body{
+  padding: 0 2rem 2rem 2rem;
+}
+
+fieldset{
+  padding: 0 2rem 2rem 2rem;
+  background-color: white;
+  border-color: lightgreen;
+  border: thick 10px;
+}
+
+.input{
+  display: flex;
+  width: 230px;
+}
+
+input{
+  height:40px;
+  font: size 20px;
+  border-radius: 17px;
+  padding-left: 5px;
+}
+
+hr{
+  color: lightgreen;
+  font-weight: bold;
+}
+
+.details {
+  display: flex;
+  padding: 2rem;
+  background-color: white;
+  border: thick 3rem green;
+}
+
+.title{
+  color: green;
+  font-weight: bold;
+  font-size: large;
+}
+
+label{
+  margin-right: 20px;
+}
+
+button{
+  margin-left: 2%;
+}
+
+.details{
+  display:flex;
+}
+
+.details label {
+  color: green;
+  font-weight: bold;
+}
+
+.info{
+  margin-right: 100px;
+}
+

@@ -1,0 +1,97 @@
+.info-Frais .info .label{
+  color: green;
+  font-weight: bold;
+  margin-right: 10px;
+  text-decoration: underline;
+}
+
+.label{
+  width: 150px;
+}
+
+.info-risque .label{
+  width: 50px;
+}
+
+.info-Frais {
+  display: flex;
+}
+
+.row {
+  display: block;
+}
+
+.cin{
+  margin-left: -90px;
+}
+
+.etat{
+  margin-left: -50px;
+  width: 100px;
+}
+
+.info{
+  margin: 0px 130px 60px 20px;
+  display: flex;
+}
+
+.info-cin{
+  margin: -20px 130px 60px 20px;
+  display: flex;
+}
+
+.info-cin .label{
+  color: green;
+  font-weight: bold;
+  margin-right: 10px;
+  text-decoration: underline;
+}
+
+.info-risque .info p{
+  width: 100px;
+}
+
+.field_set{
+  border-color:#ffff;
+  border-style: solid;
+}
+
+.p-button-danger{
+  margin-left: 900px;
+  margin-right: 50px;
+}
+
+.info-debiteur .info .label{
+  color: green;
+  font-weight: bold;
+  margin-right: 10px;
+  text-decoration: underline;
+}
+
+.info-risque .info .label{
+  color: green;
+  font-weight: bold;
+  margin-right: 10px;
+  text-decoration: underline;
+}
+
+.info-debiteur {
+  display: flex;
+}
+
+.info-risque {
+  display: flex;
+}
+
+.row {
+  display: block;
+}
+
+.info{
+  margin: 0px 130px 60px 20px;
+  display: flex;
+}
+
+.info-risque .info p{
+  width: 100px;
+}

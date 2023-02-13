@@ -1,0 +1,27 @@
+.card{
+  display: flex;
+  padding: -2em;
+}
+
+.info{
+  display: flex;
+}
+
+.user-info{
+  margin-right: 10px;
+  display: flex;
+}
+
+img{
+  width: 50px;
+  margin-right: 30px;
+}
+
+p-menubar{
+  width: 2000px;
+}
+
+.logout{
+  margin-top: 8px;
+  margin-left: 3px;
+}

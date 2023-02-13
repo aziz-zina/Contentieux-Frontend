@@ -1,0 +1,69 @@
+<p-accordion [multiple]="true">
+  <p-toast position="top-center" key="accessDenied"></p-toast>
+  <p-accordionTab header="Les informations du risque" [selected]="true">
+    <div class="info-debiteur">
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">Numero du risque: </span><span class="info-ctx">{{ris.numRisque}}</span>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Montant initial: </span><span class="info-ctx">{{ris.montantInitial|
+              number:'0.3-3'}} TND</span>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Etat du risque: </span><span class="info-ctx">{{ris.etatRisque}}</span>
+        </ul>
+      </div>
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">Frai(s): </span><span class="info-ctx">{{ris.fraisTotales| number:'0.3-3'}}
+              TND</span>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Solde principal: </span><span class="info-ctx">{{ris.soldePrincipal|
+              number:'0.3-3'}} TND</span>
+        </ul>
+      </div>
+    </div>
+  </p-accordionTab>
+
+  <p-accordionTab header="Les informations du Frais" [selected]="true">
+    <div class="info-debiteur">
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">n° Frais: </span><span class="info-ctx">{{selectedFrais.numFrais}}</span>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Type du frais: </span><span class="info-ctx">{{selectedFrais.typeFrais}}</span>
+        </ul>
+      </div>
+
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">Date de l'opération: </span><span class="info-ctx">{{selectedFrais.dateFrais |
+            date:'shortDate'}}</span>
+        </ul>
+        <ul class="info" *ngIf="selectedFrais.typeFrais == 'Enregistrement'">
+          <li><span class="label">n° Piece: </span><span class="info-ctx">{{selectedFrais.numPiece}}</span>
+          </ul>
+        <ul class="info" *ngIf="selectedFrais.typeFrais == 'Prestataire de service'">
+          <li><span class="label">n° CIN: </span><span class="info-ctx">{{selectedFrais.cin}}</span>
+          </ul>
+      </div>
+
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">Montant du frais: </span><span class="info-ctx">{{selectedFrais.montantFrais |
+            number:'0.3-3'}} TND</span>
+        </ul>
+      </div>
+    </div>
+  </p-accordionTab>
+  <br>
+  <fieldset class="field_set">
+    <button pButton pRipple type="button" label="Refuser" class="p-button-raised p-button-danger"
+      (click)="refuser()"></button>
+    <button pButton pRipple type="button" label="Valider" class="p-button-raised p-button-success"
+      (click)="valider()"></button>
+  </fieldset>
+</p-accordion>

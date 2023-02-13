@@ -1,0 +1,15 @@
+<div class="card" *ngIf="activeUser | async as u">
+  <p-menubar [model]="items">
+    <div class="info">
+      <div class="user-info">
+        <p>{{u.nomUser}} {{u.prenomUser}}</p>
+        <button pButton pRipple type="button" icon="pi pi-sign-out" class="p-button-rounded p-button-secondary p-button-text logout" (click)="logout()"></button>
+      </div>
+      <div class="logout">
+      </div>
+      <a routerLink="./home"><img src="../assets/Logo_BNA.png" alt=""></a>
+    </div>
+  </p-menubar>
+</div>
+<br><br>
+<router-outlet></router-outlet>

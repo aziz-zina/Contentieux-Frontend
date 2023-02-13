@@ -1,0 +1,92 @@
+<p-toast position="top-center" key="msg"></p-toast>
+<p-accordion [multiple]="true">
+  <p-accordionTab header="Les informations du débiteur n°{{ctx.numCtx}}" [selected]="true">
+    <div class="info-debiteur">
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">Id du Debiteur: </span><span class="info-ctx">{{ctx.numCtx}}</span>
+          </li>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Nom du Debiteur: </span><span class="info-ctx">{{ctx.nomCtx}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">Prenom du Debiteur: </span><span class="info-ctx">{{ctx.prenomCtx}}</span>
+          </li>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Etat du Dossier: </span><span class="info-ctx">{{ctx.etatCtx}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </p-accordionTab>
+
+  <p-accordionTab header="Les informations du risque" [selected]="true">
+    <div class="info-debiteur">
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">Numero du risque: </span><span class="info-ctx">{{risque.numRisque}}</span>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Montant initial: </span><span class="info-ctx">{{risque.montantInitial|
+              number:'0.3-3'}} TND</span>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Etat du risque: </span><span class="info-ctx">{{risque.etatRisque}}</span>
+        </ul>
+      </div>
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">Frai(s): </span><span class="info-ctx">{{risque.fraisTotales| number:'0.3-3'}}
+              TND</span>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Solde principal: </span><span class="info-ctx">{{risque.soldePrincipal|
+              number:'0.3-3'}} TND</span>
+        </ul>
+      </div>
+    </div>
+  </p-accordionTab>
+
+  <p-accordionTab header="Ajouter un Frais" [selected]="true">
+    <form #f="ngForm" (submit)="addFrais(f)">
+      <div class="type">
+        <div class="type-input">
+          <label for="type">Type: </label>
+          <p-dropdown [options]="Types" [(ngModel)]="selectedType" name="type" [showClear]="false"
+            placeholder="Sélectionner un type" [ngModelOptions]="{standalone: true}"></p-dropdown>
+        </div>
+        <div class="Enregistrement" *ngIf="selectedType == 'Enregistrement'">
+          <label for="Enr">N° piece: </label>
+          <input id="Enr" type="number" required pInputText ngModel name="Enr" [(ngModel)]="numPiece"
+            [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="Prest" *ngIf="selectedType == 'Prestataire de service'">
+          <label for="Prest">CIN: </label>
+          <input id="Prest" type="number" required pInputText ngModel name="cin" [(ngModel)]="cin"
+            [ngModelOptions]="{standalone: true}">
+        </div>
+      </div>
+      <br><br>
+      <div class="selon-type">
+        <div class="montant">
+          <label for="currency-tunisia">Montant: </label>
+          <p-inputNumber [(ngModel)]="montant" mode="currency" inputId="currency-tunisia" currency="TND"
+            currencyDisplay="code" locale="en-IN" [ngModelOptions]="{standalone: true}">
+          </p-inputNumber>
+        </div>
+        <div class="field col-12 md:col-4">
+          <label for="dateformat">Date frais: </label>
+          <p-calendar [(ngModel)]="dateFrais" dateFormat="mm-dd-yy" inputId="dateformat" name="date"
+            [ngModelOptions]="{standalone: true}"></p-calendar>
+        </div>
+      </div>
+      <br><br>
+      <button pButton pRipple type="submit" label="Enregistrer" class="p-button-raised"></button>
+    </form>
+  </p-accordionTab>
+</p-accordion>

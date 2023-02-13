@@ -1,0 +1,7 @@
+<body>
+  <br><br><br><br><br><br>
+  <div class="Home" *ngIf="activeUser | async as u">
+    <h1 class="header">Bienvenue, {{u.nomUser}}</h1><br>
+    <img src="../../assets/bna.jpg" alt="Logo BNA">
+  </div>
+</body>

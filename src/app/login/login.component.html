@@ -1,0 +1,25 @@
+<body><p-toast position="top-center" key="msg"></p-toast>
+  <img src="../../assets/bna__1_-removebg-preview.png" alt="">
+  <div class="grid p-fluid login">
+    <div class="Legend">
+      <h2>Se Connecter</h2>
+    </div>
+    <hr>
+    <form #f="ngForm" (ngSubmit)="login(f)">
+      <div class="info">
+        <div class="col-12 md:col-4">
+          <div class="p-inputgroup loginInput">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input type="text" pInputText placeholder="Login" name="login" ngModel required>
+          </div>
+          <div class="p-inputgroup passwordInput">
+            <span class="p-inputgroup-addon"><i class="pi pi-key"></i></span>
+            <input type="password" pInputText placeholder="Mot de pass" name="password" ngModel required>
+          </div>
+          <br><br><br>
+          <button pButton pRipple type="submit" label="Se Connecter" class="p-button-raised p-button-success"></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

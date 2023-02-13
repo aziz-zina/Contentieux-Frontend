@@ -1,0 +1,68 @@
+<body>
+  <br>
+  <p-toast position="top-center" key="nonExistant"></p-toast>
+  <form #f="ngForm" (ngSubmit)="chercher(f)">
+    <fieldset>
+      <p class="title">Consulter Client</p>
+      <hr>
+      <br>
+      <label for="id">Client ID: </label>
+      <span class="">
+        <input id="id" type="number" required pInputText ngModel name="id">
+      </span>
+      <button pButton pRipple type="submit" icon="pi pi-search" class="p-button-rounded p-button-success"></button>
+    </fieldset>
+  </form>
+  <br><br>
+  <div *ngIf="etat == true">
+    <hr>
+    <br>
+    <div class="details flex flex-wrap justify-content-center card-container blue-container gap-3">
+      <div class="info">
+        <label for="">Id du client: </label>
+        <p>{{client.idClient}}</p>
+      </div>
+      <div class="info">
+        <label for="">Nom du client: </label>
+        <p>{{client.nomClient}}</p>
+      </div>
+      <div class="info">
+        <label for="">Prenom du client: </label>
+        <p>{{client.prenomClient}}</p>
+      </div>
+      <div class="info">
+        <label for="">Etat du client: </label>
+        <p>{{client.etatClient}}</p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <p-table [resizableColumns]="true" styleClass="p-datatable-gridlines" [value]="tabCredits" [paginator]="true"
+      [rows]="4" [showCurrentPageReport]="true" [tableStyle]="{'min-width': '50rem'}"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [resizableColumns]="true">>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>n° Credit</th>
+          <th>Solde</th>
+          <th>Etat</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-credit>
+        <tr>
+          <td>{{credit.numCredit}}</td>
+          <td>{{credit.soldeCredit | number:'0.3-3'}} TND</td>
+          <td>{{credit.etatCredit}}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="3" style="text-align: center;">Rien à montrer ici</td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <br>
+    <p-toast position="top-center"></p-toast>
+    <button type="button" pButton pRipple (click)="ajouter()" label="Changer l'état"
+      class="p-button-danger mb-2"></button>
+  </div>
+</body>

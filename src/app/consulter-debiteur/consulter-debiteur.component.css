@@ -1,0 +1,77 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  padding: 0 2rem 2rem 2rem;
+}
+
+fieldset {
+  padding: 0 2rem 2rem 2rem;
+  background-color: white;
+  border-color: lightgreen;
+  border: thick 10px;
+}
+
+.title {
+  color: green;
+  font-weight: bold;
+  font-size: large;
+}
+
+label {
+  margin-right: 20px;
+}
+
+.input {
+  display: flex;
+  width: 230px;
+}
+
+input {
+  height: 40px;
+  font: size 14px;
+  border-radius: 17px;
+  padding-left: 5px;
+}
+
+button {
+  margin-left: 2%;
+}
+
+.details {
+  display: flex;
+  padding: 2rem;
+  background-color: white;
+  border-color: lightgreen;
+  border: thick 10px;
+}
+
+.details label {
+  color: green;
+  font-weight: bold;
+}
+
+.info {
+  margin-right: 100px;
+}
+
+.tabRisque {
+  cursor: pointer;
+}
+
+p-dialog {
+  width: 1200px;
+}
+
+.info-debiteur {
+  display: flex;
+}
+
+.info-debiteur .info label {
+  color: green;
+}
+
+.info-risque {
+  display: block;
+}

@@ -1,0 +1,84 @@
+<p-accordion [multiple]="true">
+  <p-accordionTab header="Les informations du débiteur n°{{ctx.numCtx}}" [selected]="true">
+    <div class="info-debiteur">
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">Id du Debiteur: </span><span class="info-ctx">{{ctx.numCtx}}</span>
+          </li>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Nom du Debiteur: </span><span class="info-ctx">{{ctx.nomCtx}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">Prenom du Debiteur: </span><span class="info-ctx">{{ctx.prenomCtx}}</span>
+          </li>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Etat du Dossier: </span><span class="info-ctx">{{ctx.etatCtx}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </p-accordionTab>
+
+  <p-accordionTab header="Les informations du risque" [selected]="true">
+    <div class="info-debiteur">
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">Numero du risque: </span><span class="info-ctx">{{risque.numRisque}}</span>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Montant initial: </span><span class="info-ctx">{{risque.montantInitial|
+              number:'0.3-3'}} TND</span>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Etat du risque: </span><span class="info-ctx">{{risque.etatRisque}}</span>
+        </ul>
+      </div>
+      <div class="row">
+        <ul class="info">
+          <li><span class="label">Frai(s): </span><span class="info-ctx">{{risque.fraisTotales| number:'0.3-3'}}
+              TND</span>
+        </ul>
+        <ul class="info">
+          <li><span class="label">Solde principal: </span><span class="info-ctx">{{risque.soldePrincipal|
+              number:'0.3-3'}} TND</span>
+        </ul>
+      </div>
+    </div>
+  </p-accordionTab>
+
+
+  <p-accordionTab header="Les Frais du risque n°{{risque.numRisque}}" [selected]="true">
+    <p-table styleClass="p-datatable-gridlines" [value]="tabFrais" [resizableColumns]="true" [paginator]="true"
+      [rows]="4" [showCurrentPageReport]="true" [tableStyle]="{'min-width': '50rem'}"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [resizableColumns]="true">>
+      <ng-template pTemplate="header">
+        <tr>
+          <th>N° Frais</th>
+          <th>Type</th>
+          <th>Montant</th>
+          <th>Date</th>
+          <th>Etat</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-frais>
+        <tr>
+          <td>{{frais.numFrais}}</td>
+          <td>{{frais.typeFrais}}</td>
+          <td>{{frais.montantFrais | number:'0.3-3'}} TND</td>
+          <td>{{frais.dateFrais | date:'shortDate'}}</td>
+          <td>{{frais.etatFrais}}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="emptymessage">
+        <tr>
+          <td colspan="5" style="text-align: center;">Rien à montrer ici</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </p-accordionTab>
+</p-accordion>
