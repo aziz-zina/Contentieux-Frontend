@@ -42,7 +42,7 @@ export class ListeFraisComponent {
     const ref = this.dialogService.open(UpdateFraisComponent, {
       header: "Modifier l'état du frais n° " + this.selectedFrais.numFrais,
       width: '80%',
-      contentStyle: { "max-height": "500px", "overflow": "auto" },
+      contentStyle: { "max-height": "550px", "overflow": "auto" },
       baseZIndex: 10000,
       data: {
         selectedFrais: this.selectedFrais
